@@ -982,10 +982,9 @@
       </p>
     </div>
     <script>
+      const navBox = document.getElementById("navBox");
+      const ico = document.getElementById("ico");
       function openNav() {
-        const navBox = document.getElementById("navBox");
-        const ico = document.getElementById("ico");
-
         if (navBox.style.display === "flex") {
           navBox.style.display = "none";
           ico.setAttribute("name", "menu-outline");
@@ -994,6 +993,19 @@
           ico.setAttribute("name", "close-outline");
         }
       }
+      const headerLink = document.querySelectorAll(".headerLink");
+
+      headerLink.forEach((but) => {
+        but.addEventListener("click", () => {
+          if (navBox.style.display === "flex") {
+            navBox.style.display = "none";
+            ico.setAttribute("name", "menu-outline");
+          } else {
+            navBox.style.display = "flex";
+            ico.setAttribute("name", "close-outline");
+          }
+        });
+      });
     </script>
   </body>
 </html>

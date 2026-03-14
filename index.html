@@ -86,8 +86,8 @@
       }
       .heroSection {
         position: relative;
-        padding-top: 60px;
         padding: 1.2rem;
+        padding-top: 60px;
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -185,7 +185,7 @@
       }
       .collectionBox {
         position: relative;
-        height: 500px;
+        height: stretch;
         width: 420px;
         border-radius: 10px;
       }
@@ -532,6 +532,11 @@
           gap: 10px;
         }
       }
+      @media (max-width: 885px) {
+        .heroSection {
+          flex-direction: column;
+        }
+      }
       @media (max-width: 791px) {
         .navBut {
           display: block;
@@ -610,6 +615,20 @@
           width: 100%;
         }
       }
+      .heroContainerb {
+        position: relative;
+        width: 50%;
+        height: 70vh;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .xherhoImg {
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -635,9 +654,9 @@
         </div>
       </header>
       <section class="heroSection" id="home">
-        <div class="heroImgBox">
+        <!-- <div class="heroImgBox">
           <img src="galb.webp" class="heroImg" />
-        </div>
+        </div> -->
         <div class="heroContentContainer">
           <p class="heroTitle">Bring Your Dream Outfit to Life</p>
           <p class="heroSubtitle">
@@ -652,18 +671,25 @@
             <a href="" class="ctaBut">Book Your Style Consultation</a>
             <a href="" class="ctaButb">View our Collections</a>
           </div>
-          <div class="mobileImageBox">
+          <!-- <div class="mobileImageBox">
             <div class="heroImgBoxb">
               <img src="galb.webp" class="heroImg" />
             </div>
             <div class="heroImgBoxb">
               <img src="gala.webp" class="heroImg" />
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="heroImgBox">
+        <div class="heroContainerb">
+          <img
+            src="WhatsApp Image 2026-03-14 at 3.09.09 PM.jpeg"
+            class="xherhoImg"
+            alt=""
+          />
+        </div>
+        <!-- <div class="heroImgBox">
           <img src="gala.webp" class="heroImg" />
-        </div>
+        </div> -->
       </section>
       <section class="collectionSection" id="our-collection">
         <h1 class="coleha">Explore Our Signature Collections</h1>
@@ -997,12 +1023,14 @@
 
       headerLink.forEach((but) => {
         but.addEventListener("click", () => {
-          if (navBox.style.display === "flex") {
-            navBox.style.display = "none";
-            ico.setAttribute("name", "menu-outline");
-          } else {
-            navBox.style.display = "flex";
-            ico.setAttribute("name", "close-outline");
+          if (window.innerWidth < 791) {
+            if (navBox.style.display === "flex") {
+              navBox.style.display = "none";
+              ico.setAttribute("name", "menu-outline");
+            } else {
+              navBox.style.display = "flex";
+              ico.setAttribute("name", "close-outline");
+            }
           }
         });
       });

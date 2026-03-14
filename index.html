@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lexend+Deca:wght@100..900&family=Michroma&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Pacifico&family=Poiret+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Neha Boutique</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Google Sans", sans-serif;
+        box-sizing: border-box;
+      }
+      html {
+        transition: 1s;
+        scroll-behavior: smooth;
+      }
+      header {
+        position: fixed;
+        padding: 10px 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: #550b7c; */
+        /* color: white; */
+        background-color: white;
+        z-index: 999;
+      }
+      .logo {
+        height: 50px;
+        width: 100px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .headerBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .headerLink {
+        position: relative;
+        padding: 10px 10px;
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        transition: 1s;
+      }
+      .headerLink:hover {
+        background-color: #550b7c;
+        color: white;
+      }
+      .ctaBut {
+        padding: 8px 10px;
+        border-radius: 20px;
+        color: white;
+        background-color: #550b7c;
+        text-decoration: none;
+        font-size: 16px;
+        border: 2px solid #550b7c;
+        width: max-content;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: 1s;
+      }
+      .ctaBut:hover {
+        transform: translateY(-5px);
+      }
+      .heroSection {
+        position: relative;
+        padding-top: 60px;
+        padding: 1.2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .heroImgBox,
+      .heroImgBoxb {
+        position: relative;
+        height: 180px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: red;
+      }
+      .heroImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .heroContentContainer {
+        position: relative;
+        padding: 1rem;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .heroTitle {
+        font-family: "Gelasio", serif;
+        text-align: center;
+        font-size: 3rem;
+      }
+      .heroSubtitle {
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.9rem;
+      }
+      .heroPer {
+        font-size: 16px;
+        text-align: center;
+      }
+      .heroBox {
+        position: relative;
+        padding: 10px 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+      .ctaButb {
+        padding: 10px 10px;
+        border-radius: 20px;
+        color: black;
+        background-color: hsl(0deg, 0%, 95%);
+        white-space: nowrap;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 1s;
+      }
+      .ctaButb:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .collectionSection {
+        position: relative;
+        padding: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+      }
+      .coleha {
+        font-family: "Gelasio", serif;
+        font-weight: 400;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .colehb {
+        font-size: 16px;
+        text-align: center;
+      }
+      .collectionContainer {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .collectionBox {
+        position: relative;
+        height: 500px;
+        width: 420px;
+        border-radius: 10px;
+      }
+      .collectionImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+      }
+      .collectionMinbox {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        width: 100%;
+        background: linear-gradient(transparent, transparent, #111);
+        color: white;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .collectionTitle {
+        font-size: 30px;
+        font-weight: 600;
+        text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+      }
+      .collectionBoxb {
+        position: relative;
+        width: 30%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .xcolImgBox {
+        position: relative;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .imgCollBox {
+        position: relative;
+        display: flex;
+        gap: 10px;
+      }
+      .aboutSection {
+        position: relative;
+        padding: 1.1rem;
+        display: flex;
+        gap: 10px;
+        min-height: 100vh;
+      }
+      .aboutContainera {
+        position: relative;
+        width: 50%;
+        padding: 1.1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 10px;
+      }
+      .aboutContainerb {
+        position: relative;
+        width: 50%;
+        padding: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .aboutImgBox {
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .aboutImg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+      }
+      .aboutImg:hover {
+        transform: scale(1.1);
+      }
+      .colehd {
+        font-family: "Gelasio", serif;
+        font-weight: 400;
+        font-size: 2.5rem;
+      }
+      .gallerySection {
+        position: relative;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .galleryContainer {
+        position: relative;
+        padding: 10px 10px;
+        column-count: 3;
+        gap: 10px;
+      }
+      .galleryBox {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      .galleryImg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        transition: 1s;
+        border: 2px solid white;
+      }
+      .galleryminBox {
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        padding: 10px 10px;
+        display: none;
+        align-items: center;
+        gap: 10px;
+      }
+      .galleryImg:hover {
+        border: 2px solid #550b7c;
+        box-shadow: 0px 8px 15px rgba(225, 225, 225, 0.4);
+      }
+      .galleryImg:hover ~ .galleryminBox {
+        display: flex;
+      }
+      .galleryButb {
+        width: 100%;
+        text-align: center;
+        padding: 10px 10px;
+        border-radius: 8px;
+        background-color: white;
+        color: black;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        text-decoration: none;
+      }
+      .galleryminBox:hover {
+        display: flex;
+      }
+      .testimonialsSection {
+        position: relative;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+      }
+      .testimonialContainer {
+        position: relative;
+        padding: 10px 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 10px;
+      }
+      .testimonialBox {
+        position: relative;
+        padding: 1.2rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 15px;
+        box-shadow: 0px 8px 15px rgba(225, 225, 225, 0.2);
+        transition: 1s;
+        cursor: pointer;
+      }
+      .testimonialBox:hover {
+        background-color: #550b7c;
+        color: white;
+      }
+      .testimonialName {
+        font-family: "Gelasio", serif;
+        font-size: 1.5rem;
+      }
+      .testimonialReview {
+        text-align: left;
+      }
+      .rviewStar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      ion-icon {
+        font-size: 25px;
+        color: gold;
+      }
+      .contactusSection {
+        position: relative;
+        padding: 1.2rem;
+        display: flex;
+        gap: 10px;
+      }
+      .contactusContainera {
+        position: relative;
+        padding: 1.1rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 10px;
+      }
+      .contactusContainerb {
+        position: relative;
+        padding: 1rem;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .formContainer {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .formBox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .fromInput {
+        padding: 10px 10px;
+        border: 2px solid #eaeaea;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        outline: none;
+        transition: 1s;
+      }
+      .fromInput:hover {
+        border: 2px solid #550b7c;
+        color: #550b7c;
+      }
+      .fromInput:focus {
+        border: 2px solid #550b7c;
+        color: #550b7c;
+      }
+      .formBut {
+        padding: 10px 10px;
+        font-size: 16px;
+        background-color: #550b7c;
+        color: white;
+        border-radius: 10px;
+        border: 2px solid #550b7c;
+      }
+      .formmessage {
+        padding: 10px 10px;
+        border: 2px solid #eaeaea;
+        height: 100px;
+        width: 100%;
+        resize: none;
+        border-radius: 10px;
+        outline: none;
+      }
+      .formmessage:hover {
+        border: 2px solid #550b7c;
+        color: #550b7c;
+      }
+      .formmessage:focus {
+        border: 2px solid #550b7c;
+        color: #550b7c;
+      }
+      .iconsformdiv {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .iconsBox {
+        display: flex;
+        align-items: center;
+      }
+      .icons {
+        cursor: pointer;
+        color: #550b7c;
+      }
+      .infoLink {
+        position: relative;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+      }
+      .infoIco {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #550b7c;
+      }
+      .mobileImageBox {
+        display: none;
+      }
+      .navBut {
+        display: none;
+      }
+
+      @media (max-width: 1011px) {
+        .aboutSection {
+          flex-direction: column;
+        }
+        .aboutContainera,
+        .aboutContainerb {
+          padding: 0px;
+          width: 100%;
+        }
+      }
+      @media (max-width: 946px) {
+        .heroImgBox {
+          display: none;
+        }
+        .heroContentContainer {
+          width: 100%;
+        }
+        .mobileImageBox {
+          position: relative;
+          display: flex;
+          gap: 10px;
+        }
+      }
+      @media (max-width: 791px) {
+        .navBut {
+          display: block;
+          cursor: pointer;
+          z-index: 2;
+        }
+        .headerBox {
+          position: absolute;
+          top: 47px;
+          left: 0;
+          padding: 10px;
+          width: 100%;
+          height: calc(100vh - 40px);
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          background: white;
+          justify-content: space-around;
+          gap: 10px;
+        }
+        .headerLink {
+          width: 100%;
+        }
+      }
+      @media (max-width: 745px) {
+        .heroTitle {
+          font-size: 2.5rem;
+        }
+        .heroSubtitle {
+          font-size: 1.6rem;
+        }
+        .colehd {
+          font-size: 2rem;
+        }
+        .contactusSection {
+          flex-direction: column;
+        }
+        .contactusContainera,
+        .contactusContainerb {
+          width: 100%;
+        }
+        .galleryContainer {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 556px) {
+        .heroTitle {
+          font-size: 2rem;
+        }
+        .heroSubtitle {
+          font-size: 1.3rem;
+        }
+        .ctaBut,
+        .ctaButb {
+          width: 100%;
+          text-align: center;
+        }
+        .heroSection {
+          padding-top: 55px;
+        }
+      }
+      @media (max-width: 556px) {
+        .mobileImageBox {
+          flex-wrap: wrap;
+        }
+        .heroImgBoxb {
+          width: 100%;
+        }
+      }
+      @media (max-width: 494px) {
+        .galleryContainer {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 437px) {
+        .collectionBox {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="world">
+      <header>
+        <!-- <img src="nehalogo.jpg" class="logo" /> -->
+        <h2>Logo</h2>
+        <p class="navBut" onclick="openNav()">
+          <ion-icon
+            style="font-size: 20px; color: black"
+            id="ico"
+            name="menu-outline"
+          ></ion-icon>
+        </p>
+        <div class="headerBox" id="navBox">
+          <a href="#home" class="headerLink">Home</a>
+          <a href="#our-collection" class="headerLink">Our Collection</a>
+          <a href="#about-us" class="headerLink">About Us</a>
+          <a href="#gallery" class="headerLink">Gallery</a>
+          <a href="#testimonial" class="headerLink">Testimonials</a>
+          <a href="#contact-us" class="headerLink">Contact Us</a>
+          <a href="" class="ctaBut">Buy Now</a>
+        </div>
+      </header>
+      <section class="heroSection" id="home">
+        <div class="heroImgBox">
+          <img src="galb.webp" class="heroImg" />
+        </div>
+        <div class="heroContentContainer">
+          <p class="heroTitle">Bring Your Dream Outfit to Life</p>
+          <p class="heroSubtitle">
+            Custom Bridal, Ethnic, and Festive Wear Designed Just for You
+          </p>
+          <p class="heroPer">
+            Discover the magic of personalized fashion. From stunning bridal
+            lehengas to vibrant occasion wear, we meticulously craft and tailor
+            every detail so you can shine confidently on your special day.
+          </p>
+          <div class="heroBox">
+            <a href="" class="ctaBut">Book Your Style Consultation</a>
+            <a href="" class="ctaButb">View our Collections</a>
+          </div>
+          <div class="mobileImageBox">
+            <div class="heroImgBoxb">
+              <img src="galb.webp" class="heroImg" />
+            </div>
+            <div class="heroImgBoxb">
+              <img src="gala.webp" class="heroImg" />
+            </div>
+          </div>
+        </div>
+        <div class="heroImgBox">
+          <img src="gala.webp" class="heroImg" />
+        </div>
+      </section>
+      <section class="collectionSection" id="our-collection">
+        <h1 class="coleha">Explore Our Signature Collections</h1>
+        <p class="colehb">
+          From vibrant festive wear to timeless bridal ensembles, browse our
+          carefully curated designs to find the perfect outfit for your next
+          celebration.
+        </p>
+        <div class="collectionContainer">
+          <div class="collectionBox">
+            <img src="nola.avif" class="collectionImg" alt="" />
+            <div class="collectionMinbox">
+              <p class="collectionTitle">Bridal and Wedding Wear</p>
+              <p>
+                Meticulously crafted custom lehengas and bridal ensembles to
+                make your big day unforgettable.
+              </p>
+              <button class="ctaBut">Shop Now</button>
+            </div>
+          </div>
+          <div class="collectionBox">
+            <!-- <div class="imgCollBox">
+              <div class="xcolImgBox">
+                <img src="ncolb.jpg" class="collectionImgb" alt="" />
+              </div>
+              <div class="xcolImgBox">
+                <img src="ncolc.jpg" class="collectionImgb" alt="" />
+              </div>
+            </div> -->
+            <img src="ncold.avif" class="collectionImg" alt="" />
+
+            <div class="collectionMinbox">
+              <p class="collectionTitle">Festive and Occasion Wear</p>
+              <p>
+                Vibrant sarees and stunning chaniya cholis designed for elegance
+                at every cultural celebration.
+              </p>
+              <button class="ctaBut">Shop Now</button>
+            </div>
+          </div>
+          <div class="collectionBox">
+            <!-- <div class="imgCollBox">
+              <img src="ncold.jpg" class="collectionImgb" alt="" />
+              <img src="ncole.jpg" class="collectionImgb" alt="" />
+            </div> -->
+            <img src="ncold.jpg" class="collectionImg" alt="" />
+
+            <div class="collectionMinbox">
+              <p class="collectionTitle">Indo-Western and Fusion</p>
+              <p>
+                Stylish gowns and chic co-ord sets blending tradition with
+                contemporary, fashion-forward flair.
+              </p>
+              <button class="ctaBut">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="aboutSection" id="about-us">
+        <div class="aboutContainera">
+          <h1 class="colehd">Ahmedabad’s Premier Custom Designer Studio.</h1>
+          <h2 style="font-weight: 400">
+            Where Tradition Meets Modern Elegance
+          </h2>
+          <p>
+            Located in Ahmedabad, we are a passionate fashion boutique dedicated
+            to bringing your dream outfits to life. From intricate bridal wear
+            to chic Indo-western fusion, we celebrate your individuality through
+            meticulously crafted, custom-fit designs.
+          </p>
+          <button class="ctaBut">Visit Our Studio</button>
+        </div>
+        <div class="aboutContainerb">
+          <div class="aboutImgBox">
+            <img src="aboutbg.png" class="aboutImg" alt="Nish Boutique" />
+          </div>
+        </div>
+      </section>
+      <section class="gallerySection" id="gallery">
+        <h1 class="coleha">Our Craft in Motion & Client Diaries</h1>
+        <p class="colehb">
+          See our stunning creations come to life. Browse through our intricate
+          handwork details, vibrant lookbooks, and radiant real clients to find
+          inspiration for your own custom outfit.
+        </p>
+        <div class="galleryContainer">
+          <div class="galleryBox">
+            <img src="gala.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="galb.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="galc.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="gald.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="gale.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="galf.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="galg.webp" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+          <div class="galleryBox">
+            <img src="colb.jpg" class="galleryImg" />
+            <div class="galleryminBox">
+              <a href="" class="galleryButb">Inquire About This Piece</a>
+            </div>
+          </div>
+        </div>
+        <button class="ctaBut">View Full Lookbook</button>
+      </section>
+      <section class="testimonialsSection" id="testimonial">
+        <h1 class="coleha">Real Stories, Flawless Fits</h1>
+        <p class="colehb">
+          Discover what our beautiful clients have to say about their custom
+          designs, perfect tailoring, and memorable experiences with our studio.
+        </p>
+
+        <div class="testimonialContainer">
+          <div class="testimonialBox">
+            <p class="testimonialName">Priya S.</p>
+            <p class="testimonialReview">
+              "The team designed my dream bridal lehenga from scratch. The
+              intricate handwork was exactly what I envisioned, and the custom
+              fit was absolutely perfect for my big day!"
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+          </div>
+          <div class="testimonialBox">
+            <p class="testimonialName">Riya P.</p>
+            <p class="testimonialReview">
+              "I bought a stunning Indo-western gown for my wedding reception.
+              The beautiful fusion of traditional embroidery with a modern,
+              elegant cut made me feel so confident."
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+          <div class="testimonialBox">
+            <p class="testimonialName">Anjali M.</p>
+            <p class="testimonialReview">
+              "Their festive collection is unmatched. I picked up a vibrant,
+              detailed chaniya choli for Navratri, and the fabric quality and
+              styling were premium. Highly recommend!"
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+          <div class="testimonialBox">
+            <p class="testimonialName">Sneha V.</p>
+            <p class="testimonialReview">
+              "I was nervous about the custom design process, but they patiently
+              guided me through every fabric choice and sketch. The final
+              three-piece suit completely exceeded my expectations."
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+          </div>
+          <div class="testimonialBox">
+            <p class="testimonialName">Kavita D.</p>
+            <p class="testimonialReview">
+              "Amazing service and true attention to detail. They delivered my
+              family's wedding outfits right on time, and the customized
+              tailoring for each of us was flawless."
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+          </div>
+          <div class="testimonialBox">
+            <p class="testimonialName">Nandini K.</p>
+            <p class="testimonialReview">
+              "I live outside Ahmedabad, but the virtual consultation for my
+              customized reception gown was so seamless. The team understood
+              exactly what I wanted, and the final fit was absolute perfection!"
+            </p>
+            <div class="rviewStar">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star-half"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="contactusSection" id="contact-us">
+        <div class="contactusContainera">
+          <h1 class="colehd">Let’s Create Your Dream Outfit</h1>
+          <p style="font-size: 1.5rem">
+            Book your style consultation or visit our Ahmedabad boutique today.
+          </p>
+          <p>
+            Ready to begin your fashion journey? Whether you need a custom
+            bridal lehenga or a stunning festive ensemble, our dedicated team is
+            here to help you find your perfect fit.
+          </p>
+          <p class="infoLink">
+            <ion-icon class="infoIco" name="person"></ion-icon> Neha Patel
+          </p>
+          <a class="infoLink"
+            ><ion-icon class="infoIco" name="mail"></ion-icon>
+            nehaboutique@gmail.com</a
+          >
+          <a class="infoLink"
+            ><ion-icon class="infoIco" name="call"></ion-icon> +91 23xxxxxxxx</a
+          >
+          <div class="iconsformdiv">
+            <p class="iconsBox">
+              <ion-icon class="icons" name="logo-instagram"></ion-icon>
+            </p>
+            <p class="iconsBox">
+              <ion-icon class="icons" name="logo-facebook"></ion-icon>
+            </p>
+            <p class="iconsBox">
+              <ion-icon class="icons" name="logo-whatsapp"></ion-icon>
+            </p>
+          </div>
+        </div>
+        <div class="contactusContainerb">
+          <form action="" class="formContainer">
+            <div class="formBox">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                id="name"
+                class="fromInput"
+                required
+              />
+            </div>
+            <div class="formBox">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                class="fromInput"
+                required
+              />
+            </div>
+            <div class="formBox">
+              <label for="phnumber">Phone Number</label>
+              <input
+                type="text"
+                id="phnumber"
+                placeholder="Phone Number"
+                class="fromInput"
+                required
+              />
+            </div>
+            <div class="formBox">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                class="formmessage"
+                placeholder="Message"
+                required
+              ></textarea>
+            </div>
+            <button class="formBut">Request Consultation</button>
+          </form>
+        </div>
+      </section>
+      <p style="text-align: center">
+        © 2026 Neha's Designer Studio. All Rights Reserved.
+      </p>
+    </div>
+    <script>
+      function openNav() {
+        const navBox = document.getElementById("navBox");
+        const ico = document.getElementById("ico");
+
+        if (navBox.style.display === "flex") {
+          navBox.style.display = "none";
+          ico.setAttribute("name", "menu-outline");
+        } else {
+          navBox.style.display = "flex";
+          ico.setAttribute("name", "close-outline");
+        }
+      }
+    </script>
+  </body>
+</html>
+<!-- <ion-icon name="close-outline"></ion-icon> -->
